@@ -72,9 +72,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'hz1901',
-        'HOST': 'www.s188.top',
+        'HOST': 'localhost',
+        # 'HOST': 'www.s188.top',
         'USER': 'root',
-        'PASSWORD': 'sidian305',
+        'PASSWORD': 'Shijianzhong-305',
+        # 'PASSWORD': 'sidian305',
         'PORT': 3306
     }
 }
