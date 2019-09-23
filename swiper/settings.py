@@ -39,11 +39,23 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    #自定义的中间件，时间耗费时间，其实只不过是多层装饰器的装饰而已
+    'common.middleware.timer_pass',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+
     # 'django.middleware.csrf.CsrfViewMiddleware',
+
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 自定义中间件,不能随便更换位置。
+    'common.middleware.AuthMiddleware',
+
+
+
+
 ]
 
 ROOT_URLCONF = 'swiper.urls'

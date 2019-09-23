@@ -17,6 +17,7 @@ def send_vcode(phonenum):
     parmas = cfg.YZX_PARAMS.copy()
     parmas['param'] = vcode
     parmas['mobile'] = phonenum
+    return True
     resp = requests.post(cfg.YZX_API,json=parmas)
     # print(resp.json())
     if resp.status_code == 200:
