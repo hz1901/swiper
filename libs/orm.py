@@ -13,7 +13,9 @@ def model_to_dict(model_obj, ignore=()):
         if name in ignore:
             continue
         # print(name,value)
-        #检查传入的数据能否被序列化
+        # 检查传入的数据能否被序列化
         if isinstance(value, (datetime, date,time)):
-            att_dict[name] = str(value)               #生成字典
+            att_dict[name] = str(value)
+        else:
+            att_dict[name] = value    # 生成字典
     return att_dict

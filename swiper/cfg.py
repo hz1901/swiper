@@ -1,4 +1,9 @@
 '''程序逻辑配置及第三方平台配置'''
+# 七牛云配置
+QN_BUCKT = 'hz1901'
+QN_ACCESSKEY = '4SOb7HNc5ocWS6khhx0w-34Zrx6s9pZpsf4OOV1U'
+QN_SECRETKEY = 'NbodbMZZWgrvXT6mreh0Ig2QJSkgWolz1ik8Z17q'
+QN_BASEURL = 'http://pydltcu8j.bkt.clouddn.com'
 
 # 云之讯短信平台配置
 YZX_API = 'https://open.ucpaas.com/ol/sms/sendsms'

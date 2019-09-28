@@ -6,8 +6,8 @@ from django.db import models
 
 class User(models.Model):
     SEX = (
-        ('mail', '男性'),
-        ('femail', '女性')
+        ('male', '男性'),
+        ('female', '女性')
     )
     LOCATION = (
         ('北京', '北京'),
