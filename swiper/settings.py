@@ -34,14 +34,28 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.staticfiles',
+    # 用户的app
+    'user'
 ]
 
 MIDDLEWARE = [
+    #自定义的中间件，时间耗费时间，其实只不过是多层装饰器的装饰而已
+    'common.middleware.timer_pass',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+
     # 'django.middleware.csrf.CsrfViewMiddleware',
+
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    # 自定义中间件,不能随便更换位置。
+    'common.middleware.AuthMiddleware',
+
+
+
+
 ]
 
 ROOT_URLCONF = 'swiper.urls'
@@ -68,8 +82,14 @@ WSGI_APPLICATION = 'swiper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'hz1901',
+        'HOST': 'localhost',
+        # 'HOST': 'www.s188.top',
+        'USER': 'root',
+        'PASSWORD': 'Shijianzhong-305',
+        # 'PASSWORD': 'sidian305',
+        'PORT': 3306
     }
 }
 
@@ -96,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
-LANGUAGE_CODE = 'zn-hans'
+LANGUAGE_CODE = 'zh-hans'
 
 TIME_ZONE = 'Asia/Shanghai'
 
@@ -111,3 +131,6 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+'''临时的头像文件目录'''
+MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
